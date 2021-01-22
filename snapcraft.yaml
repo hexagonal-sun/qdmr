@@ -1,24 +1,26 @@
-name: opengd77-gadget
+name: anytone-gadget
 version: git
 grade: stable
 
-summary: Gadget snap to provide access to serial port of OpenGD77 radios.
+summary: Gadget snap to provide access to serial port of AnyTone radios.
 description: |
-  Just a tiny gadget snap to provide a defined serial interface to radios running
-  the OpenGD77 firmware. They will be bound to /dev/serial-port-anytone
+  Just a tiny gadget snap to provide a defined serial interface to AnyTone radios.
+  They will be bound to /dev/serial-port-anytone
 
 confinement: strict
 base: core18
 
 slots:
-  opengd77:
+  anytone:
     interface: serial-port
-    usb-vendor: 0x1fc9
-    usb-product: 0x0094
-    path: /dev/serial-port-opengd77
-#  anytone:
-#    interface: serial-port
-#    usb-vendor: 0x28e9
-#    usb-product: 0x018a
-#    path: /dev/serial-port-anytone
+    usb-vendor: 0x28e9
+    usb-product: 0x018a
+    path: /dev/serial-port-anytone
 
+
+parts:
+  anytone-gadget:
+    plugin: nil
+    source: https://github.com/hmatuschek/qdmr.git
+    source-type: git
+    source-branch: "anytone-gadget"
