@@ -1,73 +1,24 @@
-name: qdmr
-
+name: opengd77-gadget
 version: git
-grade: devel
-#version: 0.5.2
-#grade: stable
+grade: stable
 
-summary: Graphical code-plug programming tool for DMR radios.
+summary: Gadget snap to provide access to serial port of OpenGD77 radios.
 description: |
-  qDMR is a simple to use and feature-rich code-plug programming software (CPS) for cheap DMR
-  radios. Currently supported devices are:
-   * Radioddity/Baofeng RD-5R
-   * TYT MD-UV390
-   * Retevis RT3S
-   * Open GD77 firmware (GD77, RD-5R & DM-1801)
-   * Radioddity GD77 (untested)
+  Just a tiny gadget snap to provide a defined serial interface to radios running
+  the OpenGD77 firmware. They will be bound to /dev/serial-port-anytone
 
 confinement: strict
 base: core18
 
-architectures:
-  - build-on: amd64
-
-apps:
-  qdmr:
-    command: qdmr
-    desktop: usr/share/applications/qdmr.desktop
-    plugs:
-      - home
-      - desktop
-      - network
-      - raw-usb
-      - serial-port
-    extensions:
-      - kde-neon
-
-#slots:
-#  opengd77:
-#    interface: serial-port
-#    usb-vendor: 0x1fc9
-#    usb-product: 0x0094
-#    path: /dev/serial-port-opengd77
+slots:
+  opengd77:
+    interface: serial-port
+    usb-vendor: 0x1fc9
+    usb-product: 0x0094
+    path: /dev/serial-port-opengd77
 #  anytone:
 #    interface: serial-port
 #    usb-vendor: 0x28e9
 #    usb-product: 0x018a
 #    path: /dev/serial-port-anytone
 
-parts:
-  qdmr:
-    plugin: cmake
-    build-packages:
-      - qtbase5-dev
-      - qttools5-dev
-      - qttools5-dev-tools
-      - qtpositioning5-dev
-      - libqt5serialport5-dev
-      - libusb-1.0-0-dev
-    stage-packages:
-      - libqt5core5a
-      - libqt5gui5
-      - libqt5network5
-      - libqt5positioning5
-      - libqt5serialport5
-      - libqt5widgets5
-      - libusb-1.0-0
-    source: https://github.com/hmatuschek/qdmr.git
-    source-type: git
-    #source-tag: "v$SNAPCRAFT_PROJECT_VERSION"
-    configflags:
-      - "-DCMAKE_INSTALL_PREFIX=/usr"
-      - "-DCMAKE_BUILD_TYPE=Release"
-      - "-DBUILD_TESTS=Off"
