@@ -5,7 +5,7 @@ grade: stable
 summary: Gadget snap to provide access to serial port of AnyTone radios.
 description: |
   Just a tiny gadget snap to provide a defined serial interface to AnyTone radios.
-  They will be bound to /dev/serial-port-anytone
+  They will be bound to /dev/serial-port-anytone.
 
 confinement: strict
 base: core18
