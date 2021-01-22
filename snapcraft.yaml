@@ -1,4 +1,4 @@
-name: anytone-gadget
+name: radio-anytone-gadget
 version: git
 grade: stable
 
@@ -20,7 +20,8 @@ slots:
 
 parts:
   radio-anytone-gadget:
-    plugin: serial-port
-    source: https://github.com/hmatuschek/qdmr.git
-    source-type: git
-    source-branch: "anytone-gadget"
+    plugin: nil
+    source: .
+    #source: https://github.com/hmatuschek/qdmr.git
+    #source-type: git
+    #source-branch: "anytone-gadget"
