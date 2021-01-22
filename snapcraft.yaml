@@ -19,7 +19,7 @@ slots:
 
 
 parts:
-  anytone-gadget:
+  anytone:
     plugin: nil
     source: https://github.com/hmatuschek/qdmr.git
     source-type: git
