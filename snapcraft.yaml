@@ -1,4 +1,4 @@
-name: radio-anytone-gadget
+name: hmatuschek-radio-anytone-gadget
 version: git
 grade: stable
 
@@ -11,7 +11,7 @@ confinement: strict
 base: core18
 
 slots:
-  radio-anytone-gadget:
+  hmatuschek-radio-anytone-gadget:
     interface: serial-port
     usb-vendor: 0x28e9
     usb-product: 0x018a
@@ -19,9 +19,8 @@ slots:
 
 
 parts:
-  radio-anytone-gadget:
+  hmatuschek-radio-anytone-gadget:
     plugin: nil
-    source: .
-    #source: https://github.com/hmatuschek/qdmr.git
-    #source-type: git
-    #source-branch: "anytone-gadget"
+    source: https://github.com/hmatuschek/qdmr.git
+    source-type: git
+    source-branch: "anytone-gadget"
