@@ -11,7 +11,7 @@ confinement: strict
 base: core18
 
 slots:
-  anytone:
+  radio-anytone-gadget:
     interface: serial-port
     usb-vendor: 0x28e9
     usb-product: 0x018a
@@ -19,8 +19,8 @@ slots:
 
 
 parts:
-  anytone:
-    plugin: nil
+  radio-anytone-gadget:
+    plugin: [serial-port]
     source: https://github.com/hmatuschek/qdmr.git
     source-type: git
     source-branch: "anytone-gadget"
