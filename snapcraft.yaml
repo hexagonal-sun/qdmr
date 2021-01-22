@@ -20,7 +20,7 @@ slots:
 
 parts:
   radio-anytone-gadget:
-    plugin: [serial-port]
+    plugin: serial-port
     source: https://github.com/hmatuschek/qdmr.git
     source-type: git
     source-branch: "anytone-gadget"
