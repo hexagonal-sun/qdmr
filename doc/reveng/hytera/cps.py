@@ -8,6 +8,7 @@ from digital_channel import print_digital_channels
 from analog_channel import print_analog_channels
 from zone import print_zones
 from scan_list import print_scanlists
+from rx_group_list import print_group_lists
 
 
 def dump_cp_memory(reader: CPReader, args) -> None:
@@ -33,6 +34,8 @@ def go(reader: CPReader, args):
         print_analog_channels(cp)
     elif args.command == "printScanLists":
         print_scanlists(cp)
+    elif args.command == "printGroupLists":
+        print_group_lists(cp)
     elif args.command == "printSections":
         for section in cp.values():
             print(section)
@@ -85,6 +88,9 @@ if __name__ == "__main__":
 
     printAnalogChannelParser = subparsers.add_parser(
         "printAnalogChannels", help="print analog channels")
+
+    printGroupListsParser = subparsers.add_parser(
+        "printGroupLists", help="print Rx group lists")
 
     parsedArgs = parser.parse_args()
 
